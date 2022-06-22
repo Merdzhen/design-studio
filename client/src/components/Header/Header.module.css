@@ -1,0 +1,50 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Nuosu+SIL&family=Pacifico&display=swap'); */
+
+.header {
+  background-color: #28293e;
+  height: 120px;
+  /* font-family: Nuosu SIL, serif; */
+  color: #ffffff;
+}
+
+.headerNav {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  padding-top: 16px;
+}
+
+.logoImg {
+  height: 44px;
+  width: 46px;
+}
+
+.logoText{
+  font-size: 26px;
+  margin: 15px;
+  font-weight: 700;
+}
+
+.navMenu {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 500px;
+  font-size: 16px;
+}
+
+
+.navLink, navLink:active {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.contactBtn {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.29 );
+  border-radius: 10px;
+  padding: 18px 40px;
+  width: 140px;
+  font-size: 14px;
+  font-weight: 900;
+}

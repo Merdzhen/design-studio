@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue&display=swap');
+
+body {
+  background-color: #fdf0e9; 
+  font-family: 'Epilogue', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+}
