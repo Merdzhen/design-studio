@@ -50,11 +50,13 @@ export default function Portfolio() {
   // ф-ция выбора типа и "фильтрации" элементов по выбранному типу
   const showType = (type) => {
     if (type === 'Show All') {
-      setFilteredItems(items.slice(0, itemsOnPage))
+      setItemsOnPage(itemsStep)
+      setFilteredItems(items.slice(0, itemsStep))
       setActiveType('Show All')
     } else {
+      setItemsOnPage(itemsStep)
       const newItems = items.filter(item => item.type === type)
-      setFilteredItems(newItems.slice(0, itemsOnPage))
+      setFilteredItems(newItems.slice(0, itemsStep))
       setActiveType(type)
     }
   }
