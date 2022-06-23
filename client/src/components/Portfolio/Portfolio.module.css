@@ -28,6 +28,7 @@
 }
 
 .portfolioItems {
+  margin-bottom: 80px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -38,7 +39,6 @@
 
 
 .portfolioLoadBtn {
-  margin-top: 80px;
   margin-bottom: 184px;
   width: 170px;
   height: 48px;
@@ -49,6 +49,10 @@
   font-size: 14px;
   font-weight: 900;
   color: rgba(57,20,0,1);
+}
+
+.portfolioLoadBtnDeactive {
+  display: none;
 }
 
 

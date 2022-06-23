@@ -44,16 +44,19 @@ export default function Portfolio() {
   const [activeType, setActiveType] = useState('Show All') // выбранный/активный тип
   const [activeItem, setactiveItem] = useState() // выбранный/активный элемент
   const [windowWidth, setWindowWidth] = useState(window.innerWidth) //ширина экрана
+  const [needLoad, setNeedLoad] = useState(true)
   
  
 
   // ф-ция выбора типа и "фильтрации" элементов по выбранному типу
   const showType = (type) => {
     if (type === 'Show All') {
+      setNeedLoad(true)
       setItemsOnPage(itemsStep)
       setFilteredItems(items.slice(0, itemsStep))
       setActiveType('Show All')
     } else {
+      setNeedLoad(true)
       setItemsOnPage(itemsStep)
       const newItems = items.filter(item => item.type === type)
       setFilteredItems(newItems.slice(0, itemsStep))
@@ -102,11 +105,19 @@ export default function Portfolio() {
   })
 
   const loadItems = () => {
+    
     if (activeType === 'Show All') {
       setFilteredItems(items.slice(0, itemsOnPage + itemsStep))
+      if (items.length <= (itemsOnPage + itemsStep)) {
+        setNeedLoad(false)
+      }
     } else {
+     
       const newItems = items.filter(item => item.type === activeType)
       setFilteredItems(newItems.slice(0, itemsOnPage + itemsStep))
+      if (newItems.length <= (itemsOnPage + itemsStep)) {
+        setNeedLoad(false)
+      }
     }
     setItemsOnPage(itemsOnPage + itemsStep)
   }
@@ -125,7 +136,12 @@ export default function Portfolio() {
             <PortfolioItem item={item} key={item.id} activeItem={activeItem} activateItem={activateItem} showType={showType} />
           )}
         </div>
-        <button onClick={loadItems} className={classes.portfolioLoadBtn}>LOAD MORE</button>
+        <button onClick={loadItems} 
+        className={classes.portfolioLoadBtn}
+        className={`${classes.portfolioLoadBtn} ${needLoad ? '' : `${classes.portfolioLoadBtnDeactive}`}`}
+        >
+          LOAD MORE
+        </button>
       </div>
     </>
   )
