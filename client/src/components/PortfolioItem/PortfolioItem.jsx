@@ -1,11 +1,21 @@
 import React from 'react'
 import classes from './PortfolioItem.module.css'
 
-export default function PortfolioItem(props) {
+export default function PortfolioItem({item, activeItem, activateItem, showType}) {
   return (
-    <div className={classes.ItemDiv} style={{ backgroundImage: `url(images/portfolio/${props.item.img})` }}>
-      <button onClick={props.showType} className={classes.ItemType}>{props.item.type}</button>
-      <p className={classes.ItemTitle}>{props.item.title}</p>
+    <div
+      // className={classes.ItemDiv}
+      className={`${classes.ItemDiv} ${(activeItem === item.id) ? `${classes.activeItemDiv}` : ''}`}
+      style={{ backgroundImage: `url(images/portfolio/${item.img})` }}
+      onClick={(e) => activateItem(item.id)}
+    >
+      <button 
+        onClick={(e) => showType(e.target.innerText)}
+        className={classes.ItemType}
+      >
+        {item.type}
+      </button>
+      <p className={classes.ItemTitle}>{item.title}</p>
     </div>
   )
 }

@@ -1,8 +1,18 @@
 .ItemDiv {
+  flex-shrink: 0;
   width: 370px;
   height: 416px;
   margin: 16px 15px;
   border-radius: 6px;
+}
+
+.activeItemDiv{
+  /* border: 7px solid rgba(79,226,74,1 ); */
+  /* box-shadow: 7px rgba(79, 226, 74, 1); */
+  /* border:#FF0 dashed 1px; */
+  border-radius: 6px;
+  box-shadow:7px 7px 0px rgba(79, 226, 74, 1), -7px -7px 0px rgba(79, 226, 74, 1), 7px -7px 0px rgba(79, 226, 74, 1), -7px 7px 0px rgba(79, 226, 74, 1);
+  /* box-shadow: inset #e20b0b -7px 26px 26px -13px, 0px 7px 0px #aa0808, 0px -7px 0px #e20b0b, 7px 0px 0px #aa0808, -7px 0px 0px #aa0808; */
 }
 
 .ItemType {

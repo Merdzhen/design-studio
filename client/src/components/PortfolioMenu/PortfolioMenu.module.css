@@ -1,9 +1,9 @@
 .portfolioMenu {
+  margin: 85px auto 59px;
+  width: 560px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  width: 560px;
-  margin: 85px auto 59px;
 }
 
 .portfolioMenuItem {
@@ -14,4 +14,20 @@
 
 .activePortfolioMenuItem {
   color: rgba(22,205,83,1 );
+}
+
+.portfolioSelectDiv {
+  display: flex;
+  justify-content: center;
+}
+
+.portfolioSelect {
+  margin: 32px 15px;
+  width: 329px;
+  height: 48px;
+  background-color: rgba(255,255,255,1 );
+  border: 1px solid rgba(243,209,191,1 );
+  border-radius: 6px;
+  color: rgba(57,20,0,0.64 );
+  font-size: 16px;
 }
