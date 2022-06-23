@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useContext} from 'react'
 import classes from './PortfolioItem.module.css'
+import { PortfolioContext } from '../context/portfolioContext'
 
-export default function PortfolioItem({item, activeItem, activateItem, showType}) {
+export default function PortfolioItem({item}) {
+  const { activeItem, activateItem, showType } = useContext(PortfolioContext)
   return (
     <div
-      // className={classes.ItemDiv}
       className={`${classes.ItemDiv} ${(activeItem === item.id) ? `${classes.activeItemDiv}` : ''}`}
       style={{ backgroundImage: `url(images/portfolio/${item.img})` }}
       onClick={(e) => activateItem(item.id)}

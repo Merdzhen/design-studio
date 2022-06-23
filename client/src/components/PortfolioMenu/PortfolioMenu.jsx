@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useContext} from 'react'
 import classes from './PortfolioMenu.module.css'
+import { PortfolioContext } from '../context/portfolioContext'
 
-export default function PortfolioMenu({showType, activeType, types, windowWidth}) {
+export default function PortfolioMenu() {
+  const { showType, activeType, types, windowWidth } = useContext(PortfolioContext)
+
   // в зависимости от ширины экрана выводим либо div с меню, либо selet
   return (
     <>
