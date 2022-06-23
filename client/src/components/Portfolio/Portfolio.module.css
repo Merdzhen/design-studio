@@ -21,12 +21,35 @@
   text-align: center;
 }
 
+.portfolioMenuDiv{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .portfolioItems {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  /* максимальня ширина div для максимум 4 элементов */
+  max-width: 1630px; 
 }
 
+
+
+.portfolioLoadBtn {
+  margin-top: 80px;
+  margin-bottom: 184px;
+  width: 170px;
+  height: 48px;
+  background-color: #ffffff;
+  border-radius: 6px;
+  box-shadow:0px 3px 9px rgba(57, 20, 0, 0.08);
+  padding: 18px 43px 16px;
+  font-size: 14px;
+  font-weight: 900;
+  color: rgba(57,20,0,1);
+}
 
 
 @media only screen and (max-width: 1040px) {
@@ -36,6 +59,11 @@
 
   .portfolioDescription {
     width: 370px;
+  }
+
+  .portfolioLoadBtn {
+    margin-top: 48px;
+    margin-bottom: 224px;
   }
 }
 

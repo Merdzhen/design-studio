@@ -1,5 +1,6 @@
 .portfolioMenu {
-  margin: 85px auto 59px;
+  margin-top: 85px;
+  margin-bottom: 59px;
   width: 560px;
   display: flex;
   justify-content: space-between;
