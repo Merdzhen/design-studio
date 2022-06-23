@@ -54,7 +54,7 @@ function PortfolioContextProvider({ children }) {
     if (type === 'Show All') {
       setFilteredItems(items.slice(0, itemsStep))
       setActiveType('Show All') // выбираем тип
-      if (items.length <= (itemsOnPage)) {
+      if (items.length <= (itemsStep)) {
         setNeedLoad(false) // убираем кнопку загрузки если все возможные эл-ты типа уже на странице
       } else {
         setNeedLoad(true)
@@ -63,11 +63,12 @@ function PortfolioContextProvider({ children }) {
       const newItems = items.filter(item => item.type === type)
       setFilteredItems(newItems.slice(0, itemsStep))
       setActiveType(type)
-      if (newItems.length <= itemsOnPage) {
+      if (newItems.length <= itemsStep) {
         setNeedLoad(false)
       } else {
         setNeedLoad(true)
       }
+      console.log(newItems.length, itemsOnPage);
     }
   }
 
@@ -95,15 +96,14 @@ function PortfolioContextProvider({ children }) {
     }
   };
 
+  // для "подгрузки" следующих эл-тов
   const loadItems = () => {
-    
     if (activeType === 'Show All') {
       setFilteredItems(items.slice(0, itemsOnPage + itemsStep))
       if (items.length <= (itemsOnPage + itemsStep)) {
         setNeedLoad(false)
       }
     } else {
-     
       const newItems = items.filter(item => item.type === activeType)
       setFilteredItems(newItems.slice(0, itemsOnPage + itemsStep))
       if (newItems.length <= (itemsOnPage + itemsStep)) {
