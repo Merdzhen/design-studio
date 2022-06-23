@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import PortfolioItem from '../PortfolioItem/PortfolioItem'
+import PortfolioMenu from '../PortfolioMenu/PortfolioMenu'
 import classes from './Portfolio.module.css'
 
 export default function Portfolio() {
@@ -24,9 +25,30 @@ export default function Portfolio() {
     {id: 18, title: 'Sport-2', type: 'Branding', img: 'sport.jpg' },
   ])
 
-   // принимаем пост из дочернего компонента
-   const removeItem = (item) => {
+  const [types, setTypes] = useState([
+    { id: 1, name: 'Design'},
+    { id: 2, name: 'Branding'},
+    { id: 3, name: 'Illustration'},
+    { id: 4, name: 'Motion'}
+  ])
+  const [filteredItems, setFilteredItems] = useState(items)
+  const [activeType, setActiveType] = useState('Show All')
+
+  // принимаем item из дочернего компонента
+  const removeItem = (item) => {
     setItems(items.filter(i => i.id !== items.id))
+  }
+
+  const showType = (e) => {
+    console.log(e.target.innerText, e.target.innerText === types[0].name)
+    console.log('useFilter');
+    if (e.target.innerText === 'Show All') {
+      setFilteredItems(items)
+      setActiveType('Show All')
+    } else {
+      setFilteredItems(items.filter(item => item.type === e.target.innerText))
+      setActiveType(e.target.innerText)
+    }
   }
 
   return (
@@ -35,16 +57,11 @@ export default function Portfolio() {
         <p className={classes.portfolioTitle}>Portfolio</p>
         <p className={classes.portfolioDescription}>Agency provides a full service range including technical skills, design, business understanding.</p>
       </div>
-      <div className={classes.portfolioMenu}>
-        <p>Show All</p>
-        <p>Design</p>
-        <p>Branding</p>
-        <p>Illustration</p>
-        <p>Motion</p>
-      </div>
+      <PortfolioMenu showType={showType} activeType={activeType} types={types}/>
+      
       <div className={classes.portfolioItems}>
-        {items.map((item) => 
-          <PortfolioItem remove={removeItem} item={item} key={item.id}/>
+        {filteredItems.map((item) => 
+          <PortfolioItem remove={removeItem} showType={showType} item={item} key={item.id}/>
         )}
         
       </div>

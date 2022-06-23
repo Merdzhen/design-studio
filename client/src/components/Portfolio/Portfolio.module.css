@@ -21,16 +21,6 @@
   text-align: center;
 }
 
-.portfolioMenu {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  width: 560px;
-  font-size: 16px;
-  color: rgba(57,20,0,0.64 );
-  margin: 85px auto 59px;
-}
-
 .portfolioItems {
   display: flex;
   flex-wrap: wrap;

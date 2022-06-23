@@ -15,6 +15,7 @@
   border-radius: 19px;
   font-size: 16px;
   color: rgba(57,20,0,1);
+  cursor: pointer;
 }
 
 .ItemTitle{
