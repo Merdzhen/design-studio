@@ -1,0 +1,39 @@
+.ItemDiv {
+  width: 370px;
+  height: 416px;
+  margin: 16px 15px;
+  border-radius: 6px;
+}
+
+.ItemType {
+  margin-top: 256px;
+  margin-left: 48px;
+  height: 38px;
+  padding: 14px 18px 8px 16px;
+  background-color: rgba(255,255,255,1 );
+  border: none;
+  border-radius: 19px;
+  font-size: 16px;
+  color: rgba(57,20,0,1);
+}
+
+.ItemTitle{
+  font-weight: 800;
+  font-size: 40px;
+  color: rgba(255,255,255,1 );
+  margin: 28px 48px 54px;
+}
+
+@media only screen and (max-width: 1040px) {
+  .ItemDiv {
+    width: 329px;
+  }
+
+  .ItemType {
+    margin-left: 28px;
+  }
+
+  .ItemTitle{
+    margin-left: 28px;
+  }
+}

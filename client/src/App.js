@@ -1,5 +1,5 @@
 import Header from './components/Header/Header';
-import Main from './components/Main/Main';
+import Portfolio from './components/Portfolio/Portfolio';
 import About from './components/About';
 import Services from './components/Services';
 import Pricing from './components/Pricing';
@@ -14,8 +14,7 @@ function App() {
     <div className="App">
       <Header />
       <Routes>
-        
-        <Route path="/" element={<Main />} />
+        <Route path="/" element={<Portfolio />} />
         <Route path="about" element={<About />} />
         <Route path="services" element={<Services />} />
         <Route path="pricing" element={<Pricing />} />
