@@ -4,11 +4,7 @@ Website for a design studio.
 React app with 'pixel perfect' realization based on AdobeXD templates from the designer (see file 'Design2.xd').
 This repository only contains the portfolio page for demonstration purposes.
 
-Portfolio page with pagination:
-
-<img src='./screenshots/main.gif' alt='portfolio page screenshot'>
-
-You can switch between categories using the menu:
+Portfolio page with pagination. You can switch between categories using the menu:
 
 <img src='./screenshots/menu-types.gif' alt='types changing screenshot using menu'>
 
